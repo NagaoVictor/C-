@@ -1,0 +1,41 @@
+Cronograma de Estudo: Padrões de Projeto em C++
+Foco: Domínio dos 3 princípios de Design Patterns (Criacionais, Estruturais e Comportamentais) aplicados com performance e elegância em C++ moderno.
+
+Módulo 1: Padrões Criacionais (Criação de Objetos)
+Objetivo: Controlar e desacoplar o processo de instanciação de objetos, garantindo flexibilidade e encapsulamento na alocação de memória.
+
+- Semana 1: Singleton & Factory Method
+  - Teoria: Garantir instância única com controle de concorrência e delegar a criação para subclasses.
+  - Prática em C++: Implementação de Singleton thread-safe utilizando "meyers singleton" (variável estática local em função) e construção de uma Factory Method para instanciar diferentes tipos de drivers ou conexões.
+- Semana 2: Abstract Factory & Builder
+  - Teoria: Famílias de objetos relacionados e construção passo a passo de objetos complexos com múltiplos parâmetros opcionais.
+  - Prática em C++: Uso de Smart Pointers (std::unique_ptr) para gerenciar famílias de produtos e encadeamento de métodos (Method Chaining) no Builder.
+- Semana 3: Prototype
+  - Teoria: Clonagem de instâncias existentes para evitar custos de inicialização pesados.
+  - Prática em C++: Sobrescrita correta de construtores de cópia e operadores de atribuição, lidando com semântica de movimentação (Move Semantics).
+
+Módulo 2: Padrões Estruturais (Organização de Classes e Objetos)
+Objetivo: Compor classes e objetos em estruturas maiores, mantendo flexibilidade e eficiência arquitetural.
+
+- Semana 4: Adapter & Bridge
+  - Teoria: Traduzir interfaces incompatíveis e desacoplar uma abstração de sua implementação para que variem de forma independente.
+  - Prática em C++: Adaptar uma biblioteca legada em C para uma interface moderna em C++; uso de ponteiro para implementação (Pimpl Idiom) para reduzir tempo de compilação.
+- Semana 5: Composite & Decorator
+  - Teoria: Tratar objetos individuais e composições de objetos de maneira uniforme; adicionar responsabilidades dinamicamente.
+  - Prática em C++: Estruturas de árvore hierárquica usando polimorfismo e sobrecarga de operadores para composição de fluxos ou componentes gráficos/de hardware.
+- Semana 6: Facade, Flyweight & Proxy
+  - Teoria: Simplificar subsistemas complexos, otimizar o uso de memória compartilhando estados idênticos e controlar o acesso a objetos reais.
+  - Prática em C++: Implementação de cache de objetos leves e Smart Pointers customizadas atuando como proxies de acesso.
+
+Módulo 3: Padrões Comportamentais (Comunicação entre Objetos)
+Objetivo: Gerenciar algoritmos, responsabilidades e a troca de mensagens/fluxo de controle entre os componentes do sistema.
+
+- Semana 7: Strategy & Observer
+  - Teoria: Encapsular famílias de algoritmos intercambiáveis e estabelecer dependências de um-para-muitos para notificação de eventos.
+  - Prática em C++: Uso de std::function e templates para implementar Strategy sem overhead de herança; sistema de sinais e slots inspirado no padrão Observer.
+- Semana 8: State & Command
+  - Teoria: Permitir que um objeto altere seu comportamento quando seu estado interno mudar; encapsular solicitações como objetos.
+  - Prática em C++: Máquina de estados finitos (FSM) baseada em polimorfismo e filas de comandos para operações assíncronas ou sistemas de desfazer/refazer (Undo/Redo).
+- Semana 9: Mediator, Template Method & Visitor
+  - Teoria: Centralizar interações complexas, definir o esqueleto de um algoritmo na classe base e separar operações de estruturas de dados.
+  - Prática em C++: Implementação de algoritmos estruturados com herança e despacho duplo (Double Dispatch) com Visitor.

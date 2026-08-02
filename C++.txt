@@ -1,0 +1,47 @@
+Embora o C++ tenha nascido como uma extensão do C (originalmente chamado de "C com Classes"), hoje eles são linguagens distintas, embora compartilhem a mesma linhagem e grande compatibilidade sintática.
+
+1. Paradigmas de Programação
+- C: É uma linguagem puramente estruturada e procedural. O código é executado em uma sequência de funções e instruções que manipulam dados diretamente.
+- C++: É uma linguagem multi-paradigma. Ela suporta programação procedural, mas sua grande força é a Orientação a Objetos (OO) (classes, herança, polimorfismo, encapsulamento) e a programação genérica (templates).
+
+2. Gerenciamento de Memória e Segurança
+- C: O controle é totalmente manual. Funções como malloc(), calloc() e free() exigem que você gerencie cada byte alocado na heap, o que abre margem para vazamentos de memória (memory leaks) e falhas de ponteiro (segmentation faults).
+- C++: Embora ainda permita o controle manual de baixo nível (new e delete), o C++ moderno introduz o RAII (Resource Acquisition Is Initialization) e Smart Pointers (std::unique_ptr, std::shared_ptr), que automatizam a limpeza de memória de forma segura.
+
+3. A Biblioteca Padrão (Standard Library)
+- C: Possui uma biblioteca padrão extremamente enxuta. Estruturas de dados básicas (como listas encadeadas ou tabelas hash) precisam ser implementadas do zero ou através de bibliotecas de terceiros.
+- C++: Possui a STL (Standard Template Library), que traz um arsenal robusto pronto para uso:
+  - Contêineres: std::vector (vetor dinâmico), std::string, std::map, std::unordered_map.
+  - Algoritmos: Funções prontas de ordenação, busca, manipulação de intervalos, etc.
+
+4. Entrada e Saída (I/O)
+- C: Utiliza funções baseadas em ponteiros de arquivo e formatação de string da biblioteca <stdio.h>, como printf() e scanf().
+- C++: Utiliza fluxos (streams) seguros baseados em tipos da biblioteca <iostream>, como std::cout e std::cin, que evitam os riscos comuns de estouro de formato associados ao grupo printf.
+
+5. Polimorfismo e Sobrecarga
+- C: Funções não podem ter o mesmo nome no mesmo escopo (sem sobrecarga). Polimorfismo real exige o uso complexo de ponteiros para funções (void*).
+- C++: Suporta Sobrecarga de Funções (várias funções com o mesmo nome, mas assinaturas diferentes) e Sobrecarga de Operadores (você pode definir como operadores como + ou << se comportam com seus próprios objetos).
+
+O Primeiro Código: Olá, Mundo!
+
+Para sentir a diferença na prática, veja a estrutura básica em C++ comparada ao C:
+
+#include <iostream> // Biblioteca padrão de I/O
+
+// O ponto de entrada continua sendo a função main
+int main() {
+    // std::cout imprime no console; << é o operador de inserção de fluxo
+    std::cout << "C++ na veia!" << std::endl;
+    
+    return 0;
+}
+
+Sim, exatamente! O C++ foi criado por Bjarne Stroustrup no Bell Labs a partir de 1979. A ideia inicial dele era justamente ter uma linguagem que mantivesse a eficiência e o controle de baixo nível do C, mas que trouxesse facilidades para organizar códigos grandes — daí o nome original de "C com Classes" (adotado em 1983 para C++). 
+
+Ele queria juntar o melhor de dois mundos:
+1. A velocidade e o acesso direto ao hardware típicos do C.
+2. A abstração de alto nível e a modelagem inspirada na linguagem Simula67 (que foi pioneira em orientação a objetos).
+
+Enquanto o C clássico te obriga a pensar estritamente em termos de procedimentos, structs e alocação manual passo a passo, o C++ expandiu isso para permitir que você construa abstrações complexas (como objetos, templates e tipos customizados) que não geram custo de performance em tempo de execução (o princípio de que "você não paga pelo que não usa").
+
+Quer aprofundar em como o compilador lida com essas classes por baixo dos panos (como os ponteiros this e a semântica de objetos) ou prefere ver a parte de alocação moderna com RAII?

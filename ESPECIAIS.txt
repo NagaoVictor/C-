@@ -1,0 +1,24 @@
+Propriedades Avançadas do C++: Bibliotecas Especiais, Templates e Metaprogramação
+
+1. Templates (Metaprogramação em Tempo de Compilação)
+- O que são: Permitem escrever código genérico que funciona com qualquer tipo de dado, sem perda de desempenho, pois o compilador gera versões especializadas para cada tipo utilizado.
+- Função Template: Permite que funções operem em diferentes tipos de dados sem reescrita. O compilador infere o tipo na chamada (ex: template <typename T> T max(T a, T b)).
+- Classes Template e STL: Estruturas como std::vector<T> ou std::map<K, V> adaptam seu armazenamento interno dinamicamente ao tipo especificado.
+- Metaprogramação baseada em Templates (TMP): Permite executar lógica e cálculos durante a compilação utilizando técnicas como SFINAE (Substitution Failure Is Not An Error) e conceitos (Concepts do C++20), transferindo o custo computacional do tempo de execução para o tempo de compilação.
+
+2. A STL (Standard Template Library) e Bibliotecas Especiais
+- Contêineres Sequenciais: Armazenam elementos de forma linear (std::vector, std::list, std::deque).
+- Contêineres Associativos e Não-Ordenados: Baseados em árvores rubro-negras ou tabelas hash para buscas eficientes (std::map, std::unordered_map, std::set).
+- Algoritmos Padrão: Mais de 100 algoritmos altamente otimizados para busca, ordenação, mutação e manipulação de intervalos (<algorithm>), operando diretamente sobre os iteradores dos contêineres.
+- Bibliotecas de Sistema e Concorrência:
+  - <thread>, <mutex>, <future>: Suporte nativo a multithreading, exclusão mútua e programação assíncrona.
+  - <chrono>: Biblioteca de manipulação de tempo de alta precisão para medição de performance e relógios de sistema.
+  - <filesystem>: Manipulação multiplataforma de diretórios e arquivos do sistema operacional.
+
+3. Semântica de Movimentação (Move Semantics) e Rvalue References
+- Otimização de Cópia: Introduzida no C++11, permite "roubar" recursos de objetos temporários (rvalues) em vez de realizar cópias profundas e custosas na memória.
+- Referências Rvalue (&&): Diferenciam referências tradicionais (&) e permitem implementar construtores de movimento (Move Constructors) e operadores de atribuição por movimento, maximizando a performance em sistemas de baixo nível.
+
+4. RAII (Resource Acquisition Is Initialization) e Segurança de Memória
+- Gerenciamento Automático: O ciclo de vida do recurso (memória alocada, descritores de arquivo, sockets de rede) é vinculado diretamente ao escopo do objeto.
+- Smart Pointers: std::unique_ptr (posse exclusiva) e std::shared_ptr (posse compartilhada com contagem de referências) eliminam vazamentos de memória sem a necessidade de um Garbage Collector em tempo de execução.
